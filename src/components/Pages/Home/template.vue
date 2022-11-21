@@ -8,9 +8,7 @@ export default {
       datalist: [],
     };
   },
-  created() {
-    this.axios.defaults.baseURL = "https://bikebackend.azurewebsites.net";
-  },
+  created() {},
   methods: {},
 };
 </script>

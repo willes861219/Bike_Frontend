@@ -1,0 +1,47 @@
+<div>
+  <b-navbar v-if="$store.state.isLogin" shadow type="is-dark">
+    <template #brand>
+      <b-navbar-item tag="router-link" :to="{ path: '/' }">
+        <img src="../../../assets/navbar/01.png" alt="Lightweight UI components for Vue.js based on Bulma">
+      </b-navbar-item>
+    </template>
+    <template #start>
+      <b-navbar-item :disabled="Link[1]===$route.name" @click="LinkTo(Link)" v-for="(Link,key) in LinkList" :key="key">
+        {{Link[0]}}
+      </b-navbar-item>
+    </template>
+
+    <template #end>
+      <b-navbar-item>
+        <p>目前使用者：{{$store.state.UserName}}</p>
+      </b-navbar-item>
+      <b-navbar-item tag="div">
+        <div class="buttons" @click="LogOut">
+          <a class="button is-success">
+            Log Out
+          </a>
+        </div>
+      </b-navbar-item>
+    </template>
+  </b-navbar>
+  <!-- <div v-if=" $store.state.isLogin">
+            <div>
+              <ul>
+                <li v-for="Link in LinkList" class="buttons" style="display:flex;">
+                  <b-button type="is-success" outlined :disabled="Link[1]===$route.name" @click="LinkTo(Link)">
+                    <strong>{{Link[0]}}</strong>
+                  </b-button>
+                </li>
+              </ul>
+            </div> -->
+
+
+  <!-- <div class="buttons">
+      <a class="button is-primary">
+        <strong>Sign up</strong>
+      </a>
+      <a class="button is-light">
+        Log in
+      </a>
+    </div> -->
+</div>

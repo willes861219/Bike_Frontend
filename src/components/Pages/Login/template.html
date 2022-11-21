@@ -4,11 +4,12 @@
       <b-input v-model="UserName"></b-input>
     </b-field>
     <b-field label="Password">
-      <b-input type="password" value="iwantmytreasure" v-model="Pwd" password-reveal>
+      <b-input type="password" value="iwantmytreasure" v-model="Pwd" @keyup.native.enter="getin" password-reveal>
       </b-input>
     </b-field>
     <div class="login-btn" @click>
-      <b-button rounded>登入</b-button>
+      <b-button type="is-warning" outlined rounded @click="getin">Login</b-button>
+      <b-loading :is-full-page="isFullPage" v-model="isLoading" :can-cancel="true"></b-loading>
     </div>
   </section>
 </div>

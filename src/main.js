@@ -21,7 +21,7 @@ Vue.use(Buefy, {
   defaultIconPack: "fas",
 });
 
-axios.defaults.baseURL = "https://bikebackend.azurewebsites.net/";
+// axios.defaults.baseURL = "https://bikebackend.azurewebsites.net/api/";
 axios.defaults.headers.common["Content-Type"] = "application/json";
 
 Vue.config.productionTip = false;

@@ -1,0 +1,52 @@
+<template src="./template.html" />
+
+<script type="text/javascript">
+export default {
+  name: "NavBar",
+  data() {
+    return {
+      LinkList: [
+        ["主頁", "Home"],
+        ["查詢", "Search"],
+        ["新增採購單", "Add"],
+        ["設定", "Setting"],
+        ["Open API", "API"],
+      ],
+    };
+  },
+  watch: {},
+  methods: {
+    LinkTo(LinkName) {
+      switch (LinkName[0]) {
+        case "Open API":
+          if (this.$store.state.UserName === "管理者威延") {
+            window.location.href =
+              "https://bikebackend.azurewebsites.net/swagger/index.html";
+          } else {
+            alert("您並非相關人員");
+          }
+          break;
+        default:
+          this.$router.push(LinkName[1]);
+          break;
+      }
+    },
+    LogOut() {
+      this.$store.state.isLogin = false;
+      this.$router.push("/");
+    },
+  },
+};
+</script>
+<style>
+.navbar {
+  font-family: "Ink free", "標楷體";
+  font-size: 24px;
+}
+.navbar-item img {
+  max-height: 3.75rem !important;
+}
+.navbar-burger {
+  height: auto !important;
+}
+</style>

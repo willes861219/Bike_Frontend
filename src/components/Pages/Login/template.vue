@@ -6,19 +6,25 @@ export default {
     return {
       UserName: "",
       Pwd: "",
-      Logining: false,
+      isLoading: false,
+      isFullPage: true,
     };
   },
   methods: {
-    getin() {
-      // this.axios.defaults.baseURL = "https://bikebackend.azurewebsites.net/";
+    async getin() {
+      this.axios.defaults.baseURL = "https://bikebackend.azurewebsites.net/";
       if (this.UserName == "" && this.Pwd == "") {
-        alert("請輸入帳號密碼!");
+        this.$buefy.toast.open({
+          duration: 1000,
+          message: `帳號、密碼未輸入`,
+          position: "is-bottom",
+          type: "is-danger",
+        });
         return;
       }
 
-      this.Logining = true;
-      this.axios
+      this.isLoading = true;
+      await this.axios
         .post("/signin", {
           UserName: this.UserName,
           Password: this.Pwd,
@@ -32,12 +38,26 @@ export default {
         .catch((e) => {
           console.log(e);
           if (e.response.status == "400") {
-            alert("帳號密碼錯誤，請查驗!");
+            this.$buefy.toast.open({
+              duration: 3000,
+              message: `帳號、密碼有誤！請重新輸入`,
+              position: "is-bottom",
+              type: "is-danger",
+            });
           } else {
-            alert(`${e}`);
+            this.$buefy.dialog.alert({
+              title: "Error",
+              message: `${e}`,
+              type: "is-danger",
+              hasIcon: true,
+              icon: "times-circle",
+              iconPack: "fa",
+              ariaRole: "alertdialog",
+              ariaModal: true,
+            });
           }
         });
-      this.Logining = false;
+      this.isLoading = false;
     },
   },
 };
