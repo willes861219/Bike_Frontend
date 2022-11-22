@@ -4,10 +4,9 @@
 export default {
   data() {
     return {
-      UserName: "",
-      Pwd: "",
-      isLoading: false,
-      isFullPage: true,
+      UserName: "", //輸入帳號
+      Pwd: "", //輸入密碼
+      isLoading: false, //Loading
     };
   },
   methods: {

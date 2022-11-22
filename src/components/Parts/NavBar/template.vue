@@ -11,7 +11,7 @@ export default {
         ["新增採購單", "Add"],
         ["設定", "Setting"],
         ["Open API", "API"],
-      ],
+      ], //導覽列顯示
     };
   },
   watch: {},
@@ -34,7 +34,7 @@ export default {
     LogOut() {
       this.$store.state.isLogin = false;
       this.$router.push("/");
-    },
+    }, //登出回首頁
   },
 };
 </script>

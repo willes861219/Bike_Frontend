@@ -1,0 +1,9 @@
+<div>
+  <b-table :data="isEmpty ? []:dataList" :columns="columnList" :loading="isLoading" hoverable striped paginated
+    :per-page.sync="PerPage" pagination-rounded :selected.sync="Selected" :debounce-search="500" style="cursor: pointer"
+    :sort-icon="sortIcon">
+    <template #empty>
+      <div class="has-text-centered">No records</div>
+    </template>
+  </b-table>
+</div>

@@ -16,7 +16,7 @@ export default {
   components: { NavBar, Background },
   created() {
     document.title = "腳踏車庫存平台";
-    this.axios.defaults.baseURL = "https://bikebackend.azurewebsites.net/";
+    this.axios.defaults.baseURL = "https://bikebackend.azurewebsites.net/api/";
     if (sessionStorage.getItem("store")) {
       this.$store.replaceState(
         Object.assign(
@@ -55,7 +55,7 @@ export default {
       }
 
       await this.axios
-        .get("/Status", {
+        .get("Status", {
           headers: {
             Authorization: `bearer ${this.$store.state.APIToken}`,
           },

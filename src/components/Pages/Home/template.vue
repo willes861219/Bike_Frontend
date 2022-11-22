@@ -4,11 +4,19 @@
 export default {
   components: {},
   data() {
-    return {
-      datalist: [],
-    };
+    return {};
   },
   created() {},
   methods: {},
 };
 </script>
+
+<style>
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+</style>

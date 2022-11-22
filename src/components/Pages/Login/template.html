@@ -1,15 +1,15 @@
 <div class="Login">
   <section>
-    <b-field label="Name">
+    <b-field label="帳號">
       <b-input v-model="UserName"></b-input>
     </b-field>
-    <b-field label="Password">
+    <b-field label="密碼">
       <b-input type="password" value="iwantmytreasure" v-model="Pwd" @keyup.native.enter="getin" password-reveal>
       </b-input>
     </b-field>
     <div class="login-btn" @click>
-      <b-button type="is-warning" outlined rounded @click="getin">Login</b-button>
-      <b-loading :is-full-page="isFullPage" v-model="isLoading" :can-cancel="true"></b-loading>
+      <b-button type="is-warning" outlined rounded @click="getin">登入</b-button>
+      <b-loading v-model="isLoading" :can-cancel="true"></b-loading>
     </div>
   </section>
 </div>
