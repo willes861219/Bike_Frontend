@@ -1,12 +1,12 @@
 <div>
-  <div style="padding:40px;display: flex;">
-    <section>
-      <b-field label="品名">
+  <div class="add-comopnent">
+    <section style="flex:1;">
+      <b-field label="品名" custom-class="is-medium ">
         <b-input placeholder="請輸入腳踏車名稱..." v-model="bikeName"></b-input>
       </b-field>
 
       <b-field style="display:flex;">
-        <b-field label="車種" style="flex:2">
+        <b-field label="車種" style="flex:1;padding-right: 10px;" custom-class="is-medium ">
           <b-select placeholder="車種" icon="user" v-model="model">
             <optgroup label="類型">
               <option v-for="m in modelList" :value="m.model" :key="m.model">
@@ -15,7 +15,7 @@
             </optgroup>
           </b-select>
         </b-field>
-        <b-field label="廠商" style="flex:1">
+        <b-field label="廠商" style="flex:1; " custom-class="is-medium ">
           <b-select placeholder="廠商" icon="user" v-model="mfrs">
             <optgroup label="廠商">
               <option v-for="m in mfrsList" :value="m.manufacturer" :key="m.manufacturer">
@@ -26,30 +26,30 @@
         </b-field>
       </b-field>
 
-      <b-field label="數量">
+      <b-field label="數量" custom-class="is-medium ">
         <b-numberinput placeholder="99" :min="1" :max="99" v-model="quantity" type="is-warning"></b-numberinput>
       </b-field>
 
-      <b-field label="採購價格(單件)">
+      <b-field label="採購價格(單件)" custom-class="is-medium ">
         <b-numberinput placeholder="請輸入價格..." v-model="price" type="is-warning"></b-numberinput>
       </b-field>
 
-      <b-field label="採購日期">
+      <b-field label="採購日期" custom-class="is-medium ">
         <b-datepicker placeholder="請輸入採購日..." icon="calendar" trap-focus v-model="date" format="yyyy-mm-dd">
         </b-datepicker>
       </b-field>
 
       <div class="addBtn">
-        <b-button type="is-warning" @click="addData">新增一筆資料至暫存</b-button>
+        <b-button type="is-warning" @click="addTempData">新增一筆資料至暫存</b-button>
       </div>
     </section>
-    <section style="flex:4; padding: 30px;">
+    <section style="flex:4;padding: 30px;">
       <DataTable :dataList="tempData" :columnList="tempColumn" :selected.sync="selected" :isLoading="isLoading"
         :perPage.sync="perPage">
 
       </DataTable>
       <div class="addBtn">
-        <b-button type="is-danger" icon-left="fa-trash-can" :disabled="!selected" @click="deleteTemp"
+        <b-button type="is-danger" icon-left="fa-trash-can" :disabled="!selected" @click="deleteSelected"
           style="margin: 10px;">刪除所選資料</b-button>
         <b-button type="is-warning" @click="pushData" style="margin: 10px;">推送所有資料</b-button>
       </div>

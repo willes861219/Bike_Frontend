@@ -1,11 +1,12 @@
 <div style="padding:30px">
-  <div style="padding-bottom:10px ;">
+  <!-- <div style="padding-bottom:10px ;">
     <b-field grouped>
       <b-field>
-        <b-button type="is-danger" icon-left="fa-trash-can" :disabled="!selected" @click="changeStatus">修改狀態</b-button>
+        <b-button type="is-danger" icon-left="fa-trash-can" :disabled="!selected" @click="changeStatus">修改狀態
+        </b-button>
       </b-field>
     </b-field>
-  </div>
+  </div> -->
   <div>
     <DataTable :dataList="dataList" :columnList="columnList" :selected.sync="selected" :isLoading="isLoading"
       :perPage="perPage">

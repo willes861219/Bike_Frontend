@@ -6,7 +6,8 @@
       </b-navbar-item>
     </template>
     <template #start>
-      <b-navbar-item :disabled="Link[1]===$route.name" @click="LinkTo(Link)" v-for="(Link,key) in LinkList" :key="key">
+      <b-navbar-item class="nav" :disabled="Link[1]===$route.name" @click="LinkTo(Link)" v-for="(Link,key) in LinkList"
+        :key="key">
         {{Link[0]}}
       </b-navbar-item>
     </template>

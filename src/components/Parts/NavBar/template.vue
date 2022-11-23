@@ -7,7 +7,8 @@ export default {
     return {
       LinkList: [
         ["主頁", "Home"],
-        ["查詢", "Search"],
+        ["查詢腳踏車", "SearchBike"],
+        ["查詢採購", "SearchPurchase"],
         ["新增採購單", "Add"],
         ["設定", "Setting"],
         ["Open API", "API"],

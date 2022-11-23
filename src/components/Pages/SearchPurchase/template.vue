@@ -12,7 +12,7 @@ export default {
         {
           field: "purchaseBikeID",
           label: "編號",
-          width: "100",
+          width: "30",
           searchable: true,
           sortable: true,
         },
@@ -26,21 +26,21 @@ export default {
         {
           field: "bikeModel",
           label: "車種",
-          width: "100",
+          width: "30",
           sortable: true,
           searchable: true,
         },
         {
           field: "manufacturer",
           label: "廠商",
-          width: "100",
+          width: "30",
           sortable: true,
           searchable: true,
         },
         {
           field: "quantity",
           label: "數量",
-          width: "100",
+          width: "30",
           sortable: true,
           searchable: true,
         },
@@ -61,7 +61,7 @@ export default {
         {
           field: "purchaseStatus",
           label: "狀態",
-          width: "100",
+          width: "30",
           sortable: true,
           searchable: true,
         },
@@ -69,6 +69,7 @@ export default {
       selected: null, //所選列
       isLoading: false, //loading
       perPage: 10, //自訂列數
+      activeTab: 0,
     };
   },
   async created() {
@@ -146,7 +147,20 @@ export default {
           });
         });
       this.getData();
-    }, //修改採購狀態
+    }, //採購狀態變更
   },
 };
 </script>
+<style>
+.tabs span {
+  font-family: "Ink free", "標楷體";
+  font-size: 24px;
+  color: #ffffff !important;
+}
+.is-active span {
+  color: darksalmon !important;
+}
+.tabs li.is-active a {
+  border-bottom-color: darksalmon !important;
+}
+</style>
