@@ -62,7 +62,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .login {
   display: flex;
   flex-direction: column;
@@ -70,19 +70,26 @@ export default {
   align-items: center;
   height: 100vh;
   font-family: "Ink free", "標楷體";
-}
-.login-btn {
-  text-align: center;
-}
-.titleSection {
-  font-size: 10vmin;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.loginSection {
-  flex: 1.5;
+
+  .titleSection {
+    font-size: 10vmin;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .loginSection {
+    flex: 1.5;
+
+    .login-btn {
+      text-align: center;
+    }
+
+    .test-msg {
+      padding-top: 20px;
+      font-family: "微軟正黑體";
+    }
+  }
 }
 </style>

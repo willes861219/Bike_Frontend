@@ -16,5 +16,11 @@
       <b-button type="is-warning" outlined rounded @click="getin">LOG IN</b-button>
       <b-loading v-model="isLoading" :can-cancel="true"></b-loading>
     </div>
+    <div class="test-msg">
+      <b-message title="測試帳號" type="is-success" aria-close-label="Close message">
+        <p>測試帳號：test</p>
+        <p>測試密碼：test123</p>
+      </b-message>
+    </div>
   </section>
 </div>
