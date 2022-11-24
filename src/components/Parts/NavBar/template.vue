@@ -6,10 +6,10 @@ export default {
   data() {
     return {
       LinkList: [
-        ["主頁", "Home"],
-        ["查詢腳踏車", "SearchBike"],
+        ["新增採購單", "AddPurchase"],
         ["查詢採購", "SearchPurchase"],
-        ["新增採購單", "Add"],
+        ["查詢腳踏車", "SearchBike"],
+        ["回主頁", "Home"],
         ["設定", "Setting"],
         ["Open API", "API"],
       ], //導覽列顯示

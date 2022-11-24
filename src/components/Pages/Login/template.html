@@ -1,14 +1,19 @@
-<div class="Login">
-  <section>
-    <b-field label="帳號">
+<div class="login">
+  <section class="titleSection">
+    <div>
+      <p>Bike Management Web</p>
+    </div>
+  </section>
+  <section class="loginSection">
+    <b-field label="ACCOUNT">
       <b-input v-model="UserName"></b-input>
     </b-field>
-    <b-field label="密碼">
+    <b-field label="PASSWORD">
       <b-input type="password" value="iwantmytreasure" v-model="Pwd" @keyup.native.enter="getin" password-reveal>
       </b-input>
     </b-field>
     <div class="login-btn" @click>
-      <b-button type="is-warning" outlined rounded @click="getin">登入</b-button>
+      <b-button type="is-warning" outlined rounded @click="getin">LOG IN</b-button>
       <b-loading v-model="isLoading" :can-cancel="true"></b-loading>
     </div>
   </section>

@@ -32,7 +32,7 @@ export default {
           this.$store.state.APIToken = `${res.data["jwtToken"]}`;
           this.$store.state.UserName = `${res.data["name"]}`;
           this.$store.state.isLogin = true;
-          this.$router.push("/Home");
+          this.$router.push("/AddPurchase");
         })
         .catch((e) => {
           console.log(e);
@@ -63,14 +63,26 @@ export default {
 </script>
 
 <style>
-.Login {
+.login {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: "Ink free", "標楷體";
 }
 .login-btn {
   text-align: center;
+}
+.titleSection {
+  font-size: 10vmin;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loginSection {
+  flex: 1.5;
 }
 </style>

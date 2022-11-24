@@ -157,10 +157,10 @@ export default {
   font-size: 24px;
   color: #ffffff !important;
 }
-.is-active span {
+.search-purchase .is-active span {
   color: darksalmon !important;
 }
-.tabs li.is-active a {
+.search-purchase .tabs li.is-active a {
   border-bottom-color: darksalmon !important;
 }
 </style>

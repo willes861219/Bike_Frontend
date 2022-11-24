@@ -139,10 +139,13 @@ export default {
   font-size: 24px;
   color: #ffffff !important;
 }
-.is-active span {
+.search-bike {
+  padding: 30px;
+}
+/* .is-active span {
   color: darksalmon !important;
-}
-.tabs li.is-active a {
+} */
+/* .tabs li.is-active a {
   border-bottom-color: darksalmon !important;
-}
+} */
 </style>
