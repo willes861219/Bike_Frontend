@@ -28,4 +28,10 @@ const router = new VueRouter({
   ],
 });
 
+//重寫push方法，隱藏跳轉同樣頁面的報錯訊息 (不影響正常跳轉)
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function (location) {
+  return originalPush.call(this, location).catch((err) => err);
+};
+
 export default router;

@@ -114,7 +114,6 @@ export default {
         date: this.selected["date"],
         purchaseStatus: changedStatus,
       };
-      console.log(data);
 
       await this.axios
         .put(`PurchaseBike/${id}`, data, {

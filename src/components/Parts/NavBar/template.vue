@@ -20,13 +20,16 @@ export default {
     LinkTo(LinkName) {
       switch (LinkName[0]) {
         case "Open API":
-          if (this.$store.state.UserName === "管理者威延") {
-            window.location.href =
-              "https://bikebackend.azurewebsites.net/swagger/index.html";
-          } else {
-            alert("您並非相關人員");
-          }
+          window.location.href =
+            "https://bikebackend.azurewebsites.net/swagger/index.html";
           break;
+        // if (this.$store.state.UserName === "管理者威延") {
+        //   window.location.href =
+        //     "https://bikebackend.azurewebsites.net/swagger/index.html";
+        // } else {
+        //   alert("您並非相關人員");
+        // }
+        // break;
         default:
           this.$router.push(LinkName[1]);
           break;

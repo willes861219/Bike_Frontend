@@ -78,7 +78,6 @@ export default {
             item.bikeStauts = "良好";
             return item;
           });
-          console.log(this.dataList);
         })
         .catch((err) => alert(err));
       this.isLoading = false;
@@ -96,7 +95,6 @@ export default {
         date: this.selected["date"],
         purchaseStatus: changedStatus,
       };
-      console.log(data);
 
       await this.axios
         .put(`PurchaseBike/${id}`, data, {
