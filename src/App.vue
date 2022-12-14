@@ -26,7 +26,6 @@ export default {
         )
       );
     }
-
     window.addEventListener("beforeunload", () => {
       sessionStorage.setItem("store", JSON.stringify(this.$store.state));
     });
@@ -49,8 +48,11 @@ export default {
   },
   methods: {
     async checkStatus() {
-      if (this.$store.state.isLogin === false) {
-        console.log("pass");
+      if (
+        this.$store.state.isLogin === false &&
+        this.$router.currentRoute.path === "/"
+      ) {
+        console.log("登入頁面pass");
         return;
       }
 
